@@ -32,18 +32,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           startupProbe:
-            periodSeconds: 5
-            failureThreshold: 5
+            periodSeconds: 10
+            failureThreshold: 10
             tcpSocket:
               port: http
           livenessProbe:
-            periodSeconds: 5
-            failureThreshold: 5
+            periodSeconds: 10
+            failureThreshold: 10
             tcpSocket:
               port: http
           readinessProbe:
-            periodSeconds: 5
-            failureThreshold: 5
+            periodSeconds: 10
+            failureThreshold: 10
             tcpSocket:
               port: http     
           env:
